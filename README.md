@@ -2,6 +2,23 @@
 ### Introduction
 In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
 
+### Approach
+
+#### General
+Using a pre-trained network - VGG16 we converted the final fully connected layer to a 1x1 convolutional layer. For the sake of course using only two classes - Road and Not road.
+To improve performance we skip connection for layer 3 and 4 by performing convolution on those VGG layers.
+
+Adam optimizer along with cross entropy were chosen for the network.  
+
+Loss function shows stable decrease throughout learning:
+![](results/loss.png)
+
+#### Results
+
+1. ![](results/um_000008.png)
+2. ![](results/um_000020.png)
+3. ![](results/um_000030.png)
+
 ### Setup
 ##### Frameworks and Packages
 Make sure you have the following is installed:

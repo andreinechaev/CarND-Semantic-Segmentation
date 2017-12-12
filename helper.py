@@ -43,9 +43,10 @@ def maybe_download_pretrained_vgg(data_dir):
         # Download vgg
         print('Downloading pre-trained vgg model...')
         with DLProgress(unit='B', unit_scale=True, miniters=1) as pbar:
+            p = os.path.join(vgg_path, vgg_filename)
             urlretrieve(
                 'https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip',
-                os.path.join(vgg_path, vgg_filename),
+                p,
                 pbar.hook)
 
         # Extract vgg
